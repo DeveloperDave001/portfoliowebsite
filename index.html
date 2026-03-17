@@ -4,16 +4,70 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Designer Dave — Creative Designer</title>
+<link rel="icon" type="image/png" href="img/fav.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+  /* PRELOADER */
+  #preloader {
+    position: fixed;
+    inset: 0;
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 10000;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+  #preloader img {
+    width: 300px;
+    height: 300px;
+    animation: scaleIn 1s ease forwards;
+  }
+  #preloader .preloader-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.15em;
+    color: var(--ink);
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease 0.5s forwards;
+  }
+  #preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+  @keyframes scaleIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  @keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  #preloader img {
+    width: 350px;
+    height: 350px;
+    animation: scaleIn 1s ease forwards;
+  }
+  #preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+  @keyframes scaleIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
   :root {
     --ink: #0a0a0a;
     --cream: #f5f0e8;
-    --rust: #f1c40f;
-    --gold: #f1c40f;
+    --rust: #ff601f;
+    --gold: #ff601f;
+    --blue: #234df1;
     --mist: #e8e2d6;
     --smoke: #b8b0a0;
   }
@@ -140,7 +194,7 @@
     font-size: 0.65rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--rust);
+    color: #000;
     margin-bottom: 2rem;
     display: flex;
     align-items: center;
@@ -151,7 +205,7 @@
     content: '';
     display: block;
     width: 40px; height: 1px;
-    background: var(--rust);
+    background: #000;
   }
 
   .hero-name {
@@ -166,7 +220,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-style: normal;
     font-weight: 400;
-    color: var(--rust);
+    color: var(--blue);
     font-size: clamp(5rem, 10vw, 9rem);
   }
 
@@ -330,6 +384,9 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
   }
   .section-number::before {
     content: attr(data-num);
@@ -352,7 +409,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 300;
-    color: var(--rust);
+    color: var(--blue);
   }
 
   .about-text {
@@ -463,7 +520,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 300;
-    color: var(--rust);
+    color: var(--blue);
   }
 
   .services-sub {
@@ -565,7 +622,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 300;
-    color: var(--rust);
+    color: var(--blue);
   }
 
   .filter-tabs {
@@ -638,7 +695,7 @@
     font-size: 0.55rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--rust);
+    color: var(--blue);
     margin-bottom: 0.5rem;
   }
   .portfolio-title {
@@ -693,7 +750,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 300;
-    color: var(--gold);
+    color: var(--rust);
   }
 
   .process-steps {
@@ -774,7 +831,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 300;
-    color: var(--rust);
+    color: var(--blue);
   }
 
   .testimonials-grid {
@@ -934,7 +991,7 @@
     font-size: 0.65rem;
     letter-spacing: 0.35em;
     text-transform: uppercase;
-    color: var(--rust);
+    color: var(--blue);
     margin-bottom: 2rem;
   }
   .contact-inner h2 {
@@ -949,7 +1006,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 300;
-    color: var(--rust);
+    color: var(--blue);
     display: block;
   }
   .contact-sub {
@@ -1442,6 +1499,23 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
+<!-- PRELOADER -->
+<div id="preloader">
+  <img src="img/fav.png" alt="Loading">
+  <div class="preloader-text">Designer Dave</div>
+</div>
+
+<script>
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.getElementById('preloader').classList.add('hide');
+    setTimeout(function() {
+      document.getElementById('preloader').style.display = 'none';
+    }, 500);
+  }, 3000);
+});
+</script>
+
 <!-- NAV -->
 <nav>
   <ul class="nav-links">
@@ -1456,7 +1530,7 @@
 <section id="hero">
   <div class="hero-left">
     <div class="hero-img-wrapper">
-      <img src="smiling-woman-writing-notes-tablet-digital-device.jpg" alt="Designer Dave">
+      <img src="img/Omopariola Abiodun David5.jpg" alt="Designer Dave">
     </div>
     <!-- Rotating Badge -->
     <div class="hero-badge">
@@ -1473,7 +1547,7 @@
     <div class="floating-label">BRAND · MOTION · IDENTITY</div>
   </div>
   <div class="hero-right">
-    <div class="hero-tag">Available for Brand & Motion Projects</div>
+    <div class="hero-tag">Available for Brand strategy, Designs & Motion Projects</div>
     <h1 class="hero-name">
       Brand & Motion<br>
       <em>Designer</em>
@@ -1540,8 +1614,10 @@
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="section-number" data-num="01">
-    About<br>Me
+  <div class="section-number" data-num="01" style="background-image: url('img/Omopariola Abiodun David3.jpg'); background-size: 200%; background-position: center; position: relative; padding-left: 2rem; width: 100%; height: 100%; min-height: 500px; display: flex; align-items: center;">
+    <div style="position: relative; z-index: 2; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+      About<br>Me
+    </div>
   </div>
   <div class="about-right">
     <h2 class="reveal">Creating brands with <span style="color: var(--rust);">purpose</span> and motion with <span style="color: var(--rust);">impact.</span></h2>
@@ -1581,14 +1657,6 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- VIDEO HERO -->
-<section id="video-hero" style="height: 100vh; position: relative; overflow: hidden;">
-  <video autoplay muted loop style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1;">
-    <source src="Most Motion for the Day...!.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 </section>
 
 <!-- SERVICES -->
@@ -1682,7 +1750,7 @@
     </div>
     <div class="portfolio-grid reveal">
       <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80" alt="Project 1">
+        <img src="img/portfolio1.jpg" alt="Project 1">
         <div class="portfolio-overlay">
           <span class="portfolio-cat">Motion Graphics</span>
           <h3 class="portfolio-title">Brand Animation<br>Package</h3>
@@ -1690,7 +1758,7 @@
         </div>
       </div>
       <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?w=600&q=80" alt="Project 2">
+        <img src="img/portfolio2.png" alt="Project 2">
         <div class="portfolio-overlay">
           <span class="portfolio-cat">Brand Identity</span>
           <h3 class="portfolio-title">Aether Brand System</h3>
