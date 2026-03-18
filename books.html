@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Materials — Books & Resources</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/png" href="img/fav.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -175,7 +177,7 @@
     }
     .filter-btn:hover, .filter-btn.active {
       background: var(--ink);
-      color: var(--parchment);
+      color: var(--cream);
       border-color: var(--ink);
     }
 
@@ -211,7 +213,7 @@
     }
     .featured-card {
       background: var(--ink);
-      color: var(--parchment);
+      color: var(--cream);
       border-radius: 4px;
       display: grid;
       grid-template-columns: 220px 1fr;
@@ -320,9 +322,9 @@
     }
     .btn-primary {
       background: var(--rust);
-      color: var(--ink);
+      color: var(--cream);
       border: none;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.1em;
@@ -333,12 +335,12 @@
       text-decoration: none;
       transition: background 0.2s;
     }
-    .btn-primary:hover { background: var(--rust-light); }
+    .btn-primary:hover { background: var(--ink); }
     .btn-ghost {
       background: transparent;
-      color: rgba(247,243,236,0.6);
-      border: 1px solid rgba(247,243,236,0.25);
-      font-family: 'DM Sans', sans-serif;
+      color: var(--cream);
+      border: 1px solid var(--cream);
+      font-family: 'Poppins', sans-serif;
       font-size: 0.8rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -349,14 +351,14 @@
       transition: all 0.2s;
     }
     .btn-ghost:hover {
-      border-color: rgba(247,243,236,0.5);
-      color: var(--parchment);
+      border-color: var(--rust);
+      color: var(--rust);
     }
     .price-tag {
       font-family: 'Poppins', sans-serif;
       font-size: 1.5rem;
       font-weight: 600;
-      color: var(--rust-light);
+      color: var(--rust);
     }
 
     /* ── BOOKS GRID ── */
@@ -485,9 +487,9 @@
     }
     .btn-buy {
       background: var(--ink);
-      color: var(--parchment);
+      color: var(--cream);
       border: none;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 0.72rem;
       font-weight: 500;
       letter-spacing: 0.1em;
@@ -498,7 +500,7 @@
       text-decoration: none;
       transition: background 0.2s;
     }
-    .btn-buy:hover { background: var(--rust); color: var(--ink); }
+    .btn-buy:hover { background: var(--rust); color: var(--cream); }
 
     /* ── PDF GUIDES SECTION ── */
     .guides-section {
@@ -568,7 +570,7 @@
       background: transparent;
       border: 1px solid var(--ink);
       color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 0.7rem;
       font-weight: 500;
       letter-spacing: 0.1em;
@@ -579,12 +581,12 @@
       text-decoration: none;
       transition: all 0.2s;
     }
-    .btn-sm:hover { background: var(--ink); color: var(--parchment); }
+    .btn-sm:hover { background: var(--ink); color: var(--cream); }
 
     /* ── NEWSLETTER / CTA ── */
     .cta-section {
       background: var(--ink);
-      color: var(--parchment);
+      color: var(--cream);
       padding: 70px 5vw;
       display: flex;
       align-items: center;
@@ -598,7 +600,7 @@
       font-weight: 300;
       margin-bottom: 10px;
     }
-    .cta-text h3 em { font-style: italic; color: var(--rust-light); }
+    .cta-text h3 em { font-style: italic; color: var(--rust); }
     .cta-text p {
       font-size: 0.88rem;
       color: rgba(247,243,236,0.55);
@@ -613,7 +615,7 @@
     .cta-input {
       background: rgba(247,243,236,0.08);
       border: 1px solid rgba(247,243,236,0.2);
-      color: var(--parchment);
+      color: var(--cream);
       font-family: 'DM Sans', sans-serif;
       font-size: 0.88rem;
       padding: 12px 18px;
@@ -636,14 +638,42 @@
     }
     footer span { color: var(--rust); opacity: 0.7; }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .grid-wrap { grid-template-columns: repeat(2, 1fr); }
+      .featured-card { grid-template-columns: 1fr 1fr; }
+      .guides-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 1.5rem 2rem; }
+      .nav-links { gap: 1.5rem; padding: 0.8rem 2rem; }
+      .nav-links a { font-size: 0.6rem; }
+      .hero { padding: 80px 2rem 50px; }
+      .hero h1 { font-size: clamp(3rem, 8vw, 6rem); }
+      .hero-label { font-size: 0.65rem; }
       .featured-card { grid-template-columns: 1fr; }
-      .featured-cover { min-height: 160px; }
+      .featured-wrap { padding: 0 2rem; }
       .featured-info { padding: 28px 24px 32px; }
-      nav { display: none; }
+      .section-header { padding: 40px 2rem 16px; }
+      .grid-wrap { grid-template-columns: 1fr; padding: 0 2rem; }
+      .guides-grid { grid-template-columns: 1fr; }
+      .guides-section { padding: 0 2rem; }
+      .cta-section { padding: 6rem 2rem; }
+      footer { flex-direction: column; gap: 2rem; text-align: center; padding: 2rem; }
       .cta-input { width: 100%; }
       .cta-form { flex-direction: column; }
+    }
+    @media (max-width: 480px) {
+      .nav-links { gap: 1rem; padding: 0.6rem 1.5rem; }
+      .nav-links a { font-size: 0.55rem; }
+      .hero { padding: 70px 1.5rem 40px; }
+      .hero h1 { font-size: clamp(2.5rem, 10vw, 4rem); }
+      .featured-wrap { padding: 0 1.5rem; }
+      .section-header { padding: 30px 1.5rem 14px; }
+      .grid-wrap { padding: 0 1.5rem; }
+      .guides-section { padding: 0 1.5rem; }
+      .cta-section { padding: 4rem 1.5rem; }
+      footer { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -677,13 +707,13 @@
       <div class="book-spine">
         <div class="book-title-cover">The Art of Deep Thinking</div>
         <div class="book-ornament">✦</div>
-        <div class="book-author-cover">Your Name</div>
+        <div class="book-author-cover">Designer Dave</div>
       </div>
     </div>
     <div class="featured-info">
       <div class="badge">⭐ Bestseller · 2024</div>
       <h2>The Art of Deep Thinking</h2>
-      <p class="author">by Your Name &nbsp;·&nbsp; 312 pages &nbsp;·&nbsp; Hardcover & eBook</p>
+      <p class="author">by Designer Dave &nbsp;·&nbsp; 312 pages &nbsp;·&nbsp; Hardcover & eBook</p>
       <p class="desc">A profound exploration of how to slow down, engage deeply, and think with clarity in an age of distraction. This book offers frameworks, stories, and exercises to rebuild your capacity for focused, meaningful thought.</p>
       <div class="featured-actions">
         <a href="#" class="btn-primary">Buy Now</a>
@@ -1062,6 +1092,54 @@
         </div>
       </div>
     </div>
+    <div class="guide-card">
+      <div class="guide-icon">📄</div>
+      <div class="guide-info">
+        <h4>Brand Building Blueprint</h4>
+        <p>Step-by-step framework for creating a brand that stands out in any market.</p>
+        <div class="guide-meta">
+          <span class="guide-pages">22 pages · PDF</span>
+          <span class="guide-price-sm">Free</span>
+          <a href="#" class="btn-sm">Download</a>
+        </div>
+      </div>
+    </div>
+    <div class="guide-card">
+      <div class="guide-icon">📄</div>
+      <div class="guide-info">
+        <h4>Public Speaking Starter Kit</h4>
+        <p>Essential techniques for delivering compelling presentations that resonate.</p>
+        <div class="guide-meta">
+          <span class="guide-pages">16 pages · PDF</span>
+          <span class="guide-price-sm">Free</span>
+          <a href="#" class="btn-sm">Download</a>
+        </div>
+      </div>
+    </div>
+    <div class="guide-card">
+      <div class="guide-icon">📄</div>
+      <div class="guide-info">
+        <h4>Content Creation Framework</h4>
+        <p>Proven formulas for creating content that engages and converts your audience.</p>
+        <div class="guide-meta">
+          <span class="guide-pages">20 pages · PDF</span>
+          <span class="guide-price-sm">Free</span>
+          <a href="#" class="btn-sm">Download</a>
+        </div>
+      </div>
+    </div>
+    <div class="guide-card">
+      <div class="guide-icon">📄</div>
+      <div class="guide-info">
+        <h4>Networking Mastery Guide</h4>
+        <p>Build meaningful professional connections that open doors and create opportunities.</p>
+        <div class="guide-meta">
+          <span class="guide-pages">15 pages · PDF</span>
+          <span class="guide-price-sm">Free</span>
+          <a href="#" class="btn-sm">Download</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1079,7 +1157,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 <span>Your Name</span>. All rights reserved. &nbsp;·&nbsp; Built with intention.</p>
+  <p>© 2025 <span>Designer Dave</span>. All rights reserved. &nbsp;·&nbsp; Built with intention.</p>
 </footer>
 
 <script>

@@ -635,6 +635,9 @@
   .counter { display: inline-block; }
 
   /* RESPONSIVE */
+  @media (max-width: 1200px) {
+    .ach-hero h1 { font-size: clamp(4rem, 8vw, 7rem); }
+  }
   @media (max-width: 1024px) {
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .awards-grid { grid-template-columns: repeat(2, 1fr); }
@@ -646,6 +649,7 @@
     .nav-links { gap: 1.5rem; padding: 0.8rem 2rem; }
     .nav-links a { font-size: 0.6rem; }
     .ach-hero { padding: 8rem 2rem 4rem; }
+    .ach-hero h1 { font-size: clamp(3rem, 8vw, 5rem); }
     .stats-section, .awards-section, .timeline-section, .press-section, .highlights-section, .ach-cta { padding: 6rem 2rem; }
     .stats-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .awards-grid { grid-template-columns: 1fr; }
@@ -655,7 +659,15 @@
     .timeline-content, .timeline-item:nth-child(even) .timeline-content { width: 100%; text-align: left; padding: 1.5rem; }
     .timeline-dot, .timeline-item:nth-child(even) .timeline-dot { left: 20px; transform: translateX(-50%); }
     .timeline-icon, .timeline-item:nth-child(even) .timeline-icon { display: none; }
-    footer { flex-direction: column; gap: 2rem; text-align: center; }
+    footer { flex-direction: column; gap: 2rem; text-align: center; padding: 2rem; }
+  }
+  @media (max-width: 480px) {
+    .nav-links { gap: 1rem; padding: 0.6rem 1.5rem; }
+    .nav-links a { font-size: 0.55rem; }
+    .ach-hero { padding: 6rem 1.5rem 3rem; }
+    .ach-hero h1 { font-size: clamp(2.5rem, 10vw, 4rem); }
+    .stats-section, .awards-section, .timeline-section, .press-section, .highlights-section, .ach-cta { padding: 4rem 1.5rem; }
+    footer { padding: 1.5rem; }
   }
 </style>
 </head>
