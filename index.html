@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Designer Dave — Creative Designer</title>
+<title>Dave — Brand Strategist & Speaker</title>
 <link rel="icon" type="image/png" href="img/fav.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 0.15rem;
     z-index: 10000;
     transition: opacity 0.5s ease, visibility 0.5s ease;
   }
@@ -35,6 +35,15 @@
     color: var(--ink);
     opacity: 0;
     animation: fadeSlideUp 0.8s ease 0.5s forwards;
+  }
+  #preloader .preloader-sub {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rust);
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease 0.7s forwards;
   }
   #preloader.hide {
     opacity: 0;
@@ -283,6 +292,25 @@
   .btn-outline:hover {
     background: var(--ink);
     color: var(--cream);
+  }
+
+  .btn-simple {
+    display: inline-block;
+    background: transparent;
+    color: var(--cream);
+    padding: 1rem 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--cream);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .btn-simple:hover {
+    background: var(--cream);
+    color: var(--ink);
   }
 
   .hero-stats {
@@ -1140,16 +1168,6 @@
 
   /* SCROLL INDICATOR */
   .scroll-indicator {
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    animation: fadeUp 1s ease 1.2s both;
-    z-index: 3;
   }
   .scroll-line {
     width: 1px;
@@ -1503,6 +1521,7 @@
 <div id="preloader">
   <img src="img/fav.png" alt="Loading">
   <div class="preloader-text">Designer Dave</div>
+  <div class="preloader-sub">BRAND STRATEGIST & KEYNOTE SPEAKER</div>
 </div>
 
 <script>
@@ -1519,10 +1538,10 @@ window.addEventListener('load', function() {
 <!-- NAV -->
 <nav>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#portfolio">Work</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="achievements.html">Achievements</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
@@ -1530,34 +1549,33 @@ window.addEventListener('load', function() {
 <section id="hero">
   <div class="hero-left">
     <div class="hero-img-wrapper">
-      <img src="img/Omopariola Abiodun David5.jpg" alt="Designer Dave">
+      <img src="img/Omopariola Abiodun David5.jpg" alt="Dave">
     </div>
-    <!-- Rotating Badge -->
     <div class="hero-badge">
       <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="60" cy="60" r="55" stroke="rgba(10,10,10,0.15)" stroke-width="1"/>
         <path id="textCircle" d="M 60,60 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" fill="none"/>
         <text fill="var(--ink)" font-family="Poppins, monospace" font-size="8.5" letter-spacing="4.2">
-          <textPath href="#textCircle">DESIGNER · ANIMATOR · CREATOR · </textPath>
+          <textPath href="#textCircle">STRATEGIST · SPEAKER · THOUGHT LEADER · </textPath>
         </text>
         <circle cx="60" cy="60" r="20" fill="var(--rust)"/>
         <text x="60" y="64" fill="white" font-family="Bebas Neue, sans-serif" font-size="11" text-anchor="middle" letter-spacing="1">HIRE ME</text>
       </svg>
     </div>
-    <div class="floating-label">BRAND · MOTION · IDENTITY</div>
+    <div class="floating-label">BRAND · STRATEGY · SPEAKING</div>
   </div>
   <div class="hero-right">
-    <div class="hero-tag">Available for Brand strategy, Designs & Motion Projects</div>
+    <div class="hero-tag">Brand Strategist & Keynote Speaker</div>
     <h1 class="hero-name">
-      Brand & Motion<br>
-      <em>Designer</em>
+      Transforming<br>
+      <em>Brands</em>
     </h1>
     <p class="hero-desc">
-      I create powerful brand identities and engaging motion graphics that connect with audiences and drive business growth — from memorable logos and complete visual systems to dynamic animations and interactive experiences. Every brand tells a story through design and motion.
+      I help businesses build powerful, authentic brands that resonate with their audiences. Through strategic thinking and compelling storytelling, I turn brand challenges into competitive advantages. I also inspire audiences worldwide as a keynote speaker on brand strategy and business growth.
     </p>
     <div class="hero-actions">
-      <a href="#portfolio" class="btn-primary"><span>View Work</span></a>
-      <a href="#contact" class="btn-outline">Let's Talk</a>
+      <a href="#services" class="btn-primary"><span>My Services</span></a>
+      <a href="contact.html" class="btn-outline">Let's Talk</a>
     </div>
     <div class="hero-stats">
       <div>
@@ -1566,49 +1584,36 @@ window.addEventListener('load', function() {
       </div>
       <div>
         <div class="stat-number">120+</div>
-        <div class="stat-label">Projects Delivered</div>
+        <div class="stat-label">Brands Transformed</div>
       </div>
       <div>
-        <div class="stat-number">40+</div>
-        <div class="stat-label">Happy Clients</div>
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Keynotes Delivered</div>
       </div>
     </div>
   </div>
   <div class="scroll-indicator">
-    <div class="scroll-line"></div>
-    <span class="scroll-text">Scroll</span>
-  </div>
-</section>
-
-<!-- VIDEO HERO 2 -->
-<section id="video-hero-2" style="height: 100vh; position: relative; overflow: hidden;">
-  <video autoplay muted loop style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1;">
-    <source src="2d animation 222.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee-section">
   <div class="marquee-track">
-    <div class="marquee-item">Brand Identity <span class="dot"></span></div>
-    <div class="marquee-item">Motion Graphics <span class="dot"></span></div>
-    <div class="marquee-item">Logo Design <span class="dot"></span></div>
-    <div class="marquee-item">Animation <span class="dot"></span></div>
-    <div class="marquee-item">Visual Systems <span class="dot"></span></div>
     <div class="marquee-item">Brand Strategy <span class="dot"></span></div>
-    <div class="marquee-item">Typography <span class="dot"></span></div>
-    <div class="marquee-item">Video Production <span class="dot"></span></div>
-    <div class="marquee-item">Brand Guidelines <span class="dot"></span></div>
-    <div class="marquee-item">Brand Identity <span class="dot"></span></div>
-    <div class="marquee-item">Motion Graphics <span class="dot"></span></div>
-    <div class="marquee-item">Logo Design <span class="dot"></span></div>
-    <div class="marquee-item">Animation <span class="dot"></span></div>
-    <div class="marquee-item">Visual Systems <span class="dot"></span></div>
+    <div class="marquee-item">Keynote Speaking <span class="dot"></span></div>
+    <div class="marquee-item">Brand Positioning <span class="dot"></span></div>
+    <div class="marquee-item">Thought Leadership <span class="dot"></span></div>
+    <div class="marquee-item">Audience Engagement <span class="dot"></span></div>
+    <div class="marquee-item">Brand Architecture <span class="dot"></span></div>
+    <div class="marquee-item">Workshop Facilitation <span class="dot"></span></div>
+    <div class="marquee-item">Messaging Strategy <span class="dot"></span></div>
     <div class="marquee-item">Brand Strategy <span class="dot"></span></div>
-    <div class="marquee-item">Typography <span class="dot"></span></div>
-    <div class="marquee-item">Video Production <span class="dot"></span></div>
-    <div class="marquee-item">Brand Guidelines <span class="dot"></span></div>
+    <div class="marquee-item">Keynote Speaking <span class="dot"></span></div>
+    <div class="marquee-item">Brand Positioning <span class="dot"></span></div>
+    <div class="marquee-item">Thought Leadership <span class="dot"></span></div>
+    <div class="marquee-item">Audience Engagement <span class="dot"></span></div>
+    <div class="marquee-item">Brand Architecture <span class="dot"></span></div>
+    <div class="marquee-item">Workshop Facilitation <span class="dot"></span></div>
+    <div class="marquee-item">Messaging Strategy <span class="dot"></span></div>
   </div>
 </div>
 
@@ -1620,40 +1625,40 @@ window.addEventListener('load', function() {
     </div>
   </div>
   <div class="about-right">
-    <h2 class="reveal">Creating brands with <span style="color: var(--rust);">purpose</span> and motion with <span style="color: var(--rust);">impact.</span></h2>
+    <h2 class="reveal">Building brands with <span style="color: var(--rust);">purpose</span> and inspiring audiences with <span style="color: var(--rust);">vision.</span></h2>
     <p class="about-text reveal reveal-delay-1">
-      With close to a decade of experience crafting brand identities and motion graphics for startups and established companies, I've learned that great design isn't about following trends — it's about creating authentic connections between brands and their audiences through compelling visuals and engaging animations. I build comprehensive visual systems that tell your story in static and motion.
+      With over a decade of experience in brand strategy and transformation, I have helped businesses across industries build authentic, compelling brands that resonate with their audiences. My approach combines deep market insight with creative storytelling to deliver strategies that drive real business growth. As a keynote speaker, I share these insights on global stages, inspiring professionals to think differently about their brands and businesses.
     </p>
     <div class="skills-grid reveal reveal-delay-2">
       <div class="skill-item">
-        <div class="skill-name">Logo Design</div>
+        <div class="skill-name">Brand Strategy</div>
         <div class="skill-bar"><div class="skill-bar-fill" style="width:95%"></div></div>
         <div class="skill-level">95%</div>
       </div>
       <div class="skill-item">
-        <div class="skill-name">Brand Strategy</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div>
-        <div class="skill-level">88%</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name">Visual Systems</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:92%"></div></div>
-        <div class="skill-level">92%</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name">Motion Graphics</div>
+        <div class="skill-name">Public Speaking</div>
         <div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div>
         <div class="skill-level">90%</div>
       </div>
       <div class="skill-item">
-        <div class="skill-name">Animation</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
-        <div class="skill-level">85%</div>
+        <div class="skill-name">Brand Positioning</div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:92%"></div></div>
+        <div class="skill-level">92%</div>
       </div>
       <div class="skill-item">
-        <div class="skill-name">Video Production</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
-        <div class="skill-level">80%</div>
+        <div class="skill-name">Workshop Facilitation</div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div>
+        <div class="skill-level">88%</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">Storytelling</div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div>
+        <div class="skill-level">90%</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">Executive Coaching</div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
+        <div class="skill-level">85%</div>
       </div>
     </div>
   </div>
@@ -1663,7 +1668,7 @@ window.addEventListener('load', function() {
 <section id="services">
   <div class="services-header reveal">
     <h2>What I <em>Do</em><br>Best</h2>
-    <p class="services-sub">Transforming businesses through strategic brand identity design and dynamic motion graphics that resonate and endure.</p>
+    <p class="services-sub">Strategic brand consulting and powerful keynote speeches that transform businesses and inspire change.</p>
   </div>
   <div class="services-list">
     <div class="service-row reveal">
@@ -1671,162 +1676,191 @@ window.addEventListener('load', function() {
       <span class="service-title">Brand Strategy</span>
       <div class="service-tags">
         <span class="service-tag">Brand Positioning</span>
-        <span class="service-tag">Market Research</span>
+        <span class="service-tag">Market Analysis</span>
         <span class="service-tag">Brand Architecture</span>
-        <span class="service-tag">Competitor Analysis</span>
+        <span class="service-tag">Competitive Strategy</span>
       </div>
       <span class="service-arrow">↗</span>
     </div>
     <div class="service-row reveal reveal-delay-1">
       <span class="service-num">02.</span>
-      <span class="service-title">Logo Design</span>
+      <span class="service-title">Keynote Speaking</span>
       <div class="service-tags">
-        <span class="service-tag">Logo Creation</span>
-        <span class="service-tag">Icon Design</span>
-        <span class="service-tag">Wordmarks</span>
-        <span class="service-tag">Brand Marks</span>
+        <span class="service-tag">Conference Keynotes</span>
+        <span class="service-tag">Corporate Events</span>
+        <span class="service-tag">Industry Summits</span>
+        <span class="service-tag">Virtual Events</span>
       </div>
       <span class="service-arrow">↗</span>
     </div>
     <div class="service-row reveal reveal-delay-2">
       <span class="service-num">03.</span>
-      <span class="service-title">Visual Identity</span>
+      <span class="service-title">Brand Messaging</span>
       <div class="service-tags">
-        <span class="service-tag">Color Palettes</span>
-        <span class="service-tag">Typography</span>
-        <span class="service-tag">Visual Systems</span>
-        <span class="service-tag">Brand Elements</span>
+        <span class="service-tag">Core Messaging</span>
+        <span class="service-tag">Tagline Development</span>
+        <span class="service-tag">Voice & Tone</span>
+        <span class="service-tag">Storytelling</span>
       </div>
       <span class="service-arrow">↗</span>
     </div>
     <div class="service-row reveal reveal-delay-3">
       <span class="service-num">04.</span>
-      <span class="service-title">Brand Guidelines</span>
+      <span class="service-title">Workshop Facilitation</span>
       <div class="service-tags">
-        <span class="service-tag">Style Guides</span>
-        <span class="service-tag">Usage Rules</span>
-        <span class="service-tag">Brand Standards</span>
-        <span class="service-tag">Documentation</span>
+        <span class="service-tag">Brand Sprint</span>
+        <span class="service-tag">Team Alignment</span>
+        <span class="service-tag">Strategy Sessions</span>
+        <span class="service-tag">Creative Brainstorms</span>
       </div>
       <span class="service-arrow">↗</span>
     </div>
     <div class="service-row reveal reveal-delay-4">
       <span class="service-num">05.</span>
-      <span class="service-title">Motion Graphics</span>
+      <span class="service-title">Executive Coaching</span>
       <div class="service-tags">
-        <span class="service-tag">2D Animation</span>
-        <span class="service-tag">Logo Animation</span>
-        <span class="service-tag">Explainer Videos</span>
-        <span class="service-tag">Social Media Content</span>
+        <span class="service-tag">Leadership Brand</span>
+        <span class="service-tag">Personal Branding</span>
+        <span class="service-tag">Public Speaking</span>
+        <span class="service-tag">Thought Leadership</span>
       </div>
       <span class="service-arrow">↗</span>
     </div>
     <div class="service-row reveal reveal-delay-4">
       <span class="service-num">06.</span>
-      <span class="service-title">Brand Applications</span>
+      <span class="service-title">Brand Audits</span>
       <div class="service-tags">
-        <span class="service-tag">Business Cards</span>
-        <span class="service-tag">Stationery</span>
-        <span class="service-tag">Packaging</span>
-        <span class="service-tag">Digital Assets</span>
+        <span class="service-tag">Gap Analysis</span>
+        <span class="service-tag">Brand Health Check</span>
+        <span class="service-tag">Opportunity Mapping</span>
+        <span class="service-tag">Recommendation Report</span>
       </div>
       <span class="service-arrow">↗</span>
     </div>
   </div>
 </section>
 
+<!-- SPEAKING -->
+<section id="speaking" style="padding: 10rem 4rem; background: var(--ink);">
+  <div style="max-width: 1400px; margin: 0 auto;">
+    <div class="reveal" style="text-align: center; margin-bottom: 6rem;">
+      <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 6vw, 6rem); color: var(--cream); line-height: 1; margin-bottom: 1rem;">Speaking <em style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; color: var(--blue);">Engagements</em></h2>
+      <p style="font-size: 1.1rem; font-weight: 300; color: var(--smoke); max-width: 600px; margin: 0 auto;">Inspiring audiences worldwide with insights on brand strategy, business growth, and personal branding.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <div class="reveal" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 3rem;">
+        <div style="font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--rust); margin-bottom: 1rem;">2025</div>
+        <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--cream); margin-bottom: 1rem;">Brand Strategy Summit</h3>
+        <p style="font-size: 0.9rem; color: var(--smoke); line-height: 1.7;">Keynote: "Building Brands That Matter" — 500+ attendees</p>
+      </div>
+      <div class="reveal reveal-delay-1" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 3rem;">
+        <div style="font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--rust); margin-bottom: 1rem;">2025</div>
+        <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--cream); margin-bottom: 1rem;">African Business Forum</h3>
+        <p style="font-size: 0.9rem; color: var(--smoke); line-height: 1.7;">Keynote: "The Power of Authentic Branding" — 800+ attendees</p>
+      </div>
+      <div class="reveal reveal-delay-2" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 3rem;">
+        <div style="font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--rust); margin-bottom: 1rem;">2024</div>
+        <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--cream); margin-bottom: 1rem;">TechConnect Conference</h3>
+        <p style="font-size: 0.9rem; color: var(--smoke); line-height: 1.7;">Keynote: "Strategy Meets Creativity" — 1,200+ attendees</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 4rem;">
+      <a href="#speaking" class="btn-simple"><span>Book Me to Speak</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- PORTFOLIO -->
-<section id="portfolio" style="max-width:100%; padding: 10rem 4rem;">
+<section id="portfolio" style="max-width:100%; padding: 10rem 4rem; background: var(--cream);">
   <div style="max-width:1400px; margin:0 auto;">
     <div class="portfolio-header reveal">
-      <h2>Selected <em>Works</em></h2>
+      <h2>Case <em>Studies</em></h2>
       <div class="filter-tabs">
         <button class="filter-tab active">All</button>
-        <button class="filter-tab">Branding</button>
-        <button class="filter-tab">Motion</button>
-        <button class="filter-tab">UI/UX</button>
-        <button class="filter-tab">Web</button>
+        <button class="filter-tab">Strategy</button>
+        <button class="filter-tab">Rebranding</button>
+        <button class="filter-tab">Positioning</button>
       </div>
     </div>
     <div class="portfolio-grid reveal">
       <div class="portfolio-item">
         <img src="img/portfolio1.jpg" alt="Project 1">
         <div class="portfolio-overlay">
-          <span class="portfolio-cat">Motion Graphics</span>
-          <h3 class="portfolio-title">Brand Animation<br>Package</h3>
-          <a href="#" class="portfolio-link">View Project</a>
+          <span class="portfolio-cat">Brand Strategy</span>
+          <h3 class="portfolio-title">Aether Rebrand<br>Transformation</h3>
+          <a href="#" class="portfolio-link">View Case Study</a>
         </div>
       </div>
       <div class="portfolio-item">
         <img src="img/portfolio2.png" alt="Project 2">
         <div class="portfolio-overlay">
-          <span class="portfolio-cat">Brand Identity</span>
-          <h3 class="portfolio-title">Aether Brand System</h3>
-          <a href="#" class="portfolio-link">View Project</a>
+          <span class="portfolio-cat">Positioning</span>
+          <h3 class="portfolio-title">Nexus Market<br>Entry Strategy</h3>
+          <a href="#" class="portfolio-link">View Case Study</a>
         </div>
       </div>
       <div class="portfolio-item">
         <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" alt="Project 3">
         <div class="portfolio-overlay">
-          <span class="portfolio-cat">Motion Graphics</span>
-          <h3 class="portfolio-title">Explainer Video Series</h3>
-          <a href="#" class="portfolio-link">View Project</a>
+          <span class="portfolio-cat">Messaging</span>
+          <h3 class="portfolio-title">Elevate Brand<br>Voice</h3>
+          <a href="#" class="portfolio-link">View Case Study</a>
         </div>
       </div>
       <div class="portfolio-item">
         <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80" alt="Project 4">
         <div class="portfolio-overlay">
-          <span class="portfolio-cat">Web Design</span>
-          <h3 class="portfolio-title">Nova Landing Page</h3>
-          <a href="#" class="portfolio-link">View Project</a>
+          <span class="portfolio-cat">Strategy</span>
+          <h3 class="portfolio-title">Horizon Growth<br>Framework</h3>
+          <a href="#" class="portfolio-link">View Case Study</a>
         </div>
       </div>
       <div class="portfolio-item">
         <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Project 5">
         <div class="portfolio-overlay">
-          <span class="portfolio-cat">E-Commerce</span>
-          <h3 class="portfolio-title">Luxe Shop Redesign</h3>
-          <a href="#" class="portfolio-link">View Project</a>
+          <span class="portfolio-cat">Rebranding</span>
+          <h3 class="portfolio-title">Venture Capital<br>Firm Rebrand</h3>
+          <a href="#" class="portfolio-link">View Case Study</a>
         </div>
       </div>
       <div class="portfolio-item">
         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Project 6">
         <div class="portfolio-overlay">
-          <span class="portfolio-cat">Data Visualization</span>
-          <h3 class="portfolio-title">Analytics Platform</h3>
-          <a href="#" class="portfolio-link">View Project</a>
+          <span class="portfolio-cat">Strategy</span>
+          <h3 class="portfolio-title">Healthcare Brand<br>Positioning</h3>
+          <a href="#" class="portfolio-link">View Case Study</a>
         </div>
       </div>
       <div class="portfolio-item">
         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Project 7">
         <div class="portfolio-overlay">
-          <span class="portfolio-cat">SaaS Design</span>
-          <h3 class="portfolio-title">Project Management Tool</h3>
-          <a href="#" class="portfolio-link">View Project</a>
+          <span class="portfolio-cat">Messaging</span>
+          <h3 class="portfolio-title">Fintech Messaging<br>Framework</h3>
+          <a href="#" class="portfolio-link">View Case Study</a>
         </div>
       </div>
       <div class="portfolio-item">
         <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80" alt="Project 8">
         <div class="portfolio-overlay">
-          <span class="portfolio-cat">Mobile App</span>
-          <h3 class="portfolio-title">Social Media App</h3>
-          <a href="#" class="portfolio-link">View Project</a>
+          <span class="portfolio-cat">Positioning</span>
+          <h3 class="portfolio-title">E-commerce Growth<br>Strategy</h3>
+          <a href="#" class="portfolio-link">View Case Study</a>
         </div>
       </div>
       <div class="portfolio-item">
         <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&q=80" alt="Project 9">
         <div class="portfolio-overlay">
-          <span class="portfolio-cat">Brand Identity</span>
-          <h3 class="portfolio-title">Tech Startup Branding</h3>
-          <a href="#" class="portfolio-link">View Project</a>
+          <span class="portfolio-cat">Strategy</span>
+          <h3 class="portfolio-title">Tech Startup<br>Brand Launch</h3>
+          <a href="#" class="portfolio-link">View Case Study</a>
         </div>
       </div>
       <div class="portfolio-item">
         <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&q=80" alt="Project 10">
         <div class="portfolio-overlay">
-          <span class="portfolio-cat">Web Design</span>
-          <h3 class="portfolio-title">Corporate Website</h3>
-          <a href="#" class="portfolio-link">View Project</a>
+          <span class="portfolio-cat">Rebranding</span>
+          <h3 class="portfolio-title">Retail Chain<br>Transformation</h3>
+          <a href="#" class="portfolio-link">View Case Study</a>
         </div>
       </div>
       <div class="portfolio-item">
@@ -1885,32 +1919,32 @@ window.addEventListener('load', function() {
 <section id="process">
   <div class="process-inner">
     <div class="process-header reveal">
-      <h2>My Creative <em>Process</em></h2>
+      <h2>My Strategic <em>Process</em></h2>
     </div>
     <div class="process-steps">
       <div class="process-step reveal">
         <div class="step-icon">⊙</div>
         <div class="step-num">01</div>
-        <h3 class="step-title">Discover & Research</h3>
-        <p class="step-desc">Deep-diving into your users, competitors, and goals. No assumptions, only evidence.</p>
+        <h3 class="step-title">Discovery</h3>
+        <p class="step-desc">Understanding your business, audience, and competitive landscape. Uncovering insights that drive strategy.</p>
       </div>
       <div class="process-step reveal reveal-delay-1">
         <div class="step-icon">◈</div>
         <div class="step-num">02</div>
-        <h3 class="step-title">Concept & Strategy</h3>
-        <p class="step-desc">Translating research into a design direction with clear principles and visual language.</p>
+        <h3 class="step-title">Strategy</h3>
+        <p class="step-desc">Developing a clear brand positioning and messaging framework that differentiates you in the market.</p>
       </div>
       <div class="process-step reveal reveal-delay-2">
         <div class="step-icon">◉</div>
         <div class="step-num">03</div>
-        <h3 class="step-title">Design & Refine</h3>
-        <p class="step-desc">Iterating rapidly from wireframes to high-fidelity, testing at every checkpoint.</p>
+        <h3 class="step-title">Implementation</h3>
+        <p class="step-desc">Bringing the strategy to life across all touchpoints with consistency and impact.</p>
       </div>
       <div class="process-step reveal reveal-delay-3">
         <div class="step-icon">◎</div>
         <div class="step-num">04</div>
-        <h3 class="step-title">Deliver & Support</h3>
-        <p class="step-desc">Handing off production-ready assets with documentation, then staying close post-launch.</p>
+        <h3 class="step-title">Growth</h3>
+        <p class="step-desc">Monitoring, refining, and scaling your brand's impact to drive measurable business results.</p>
       </div>
     </div>
   </div>
@@ -1928,35 +1962,35 @@ window.addEventListener('load', function() {
         <div class="testimonial-card reveal">
           <div class="stars">★★★★★</div>
           <span class="testi-quote">"</span>
-          <p class="testi-text">Alex brought both visual intelligence and motion expertise to our product that we didn't even know we were missing. The brand redesign and animated elements lifted conversion by 38%.</p>
+          <p class="testi-text">Dave's strategic insights transformed our brand positioning completely. His keynote at our annual conference was the highlight of the event. Revenue increased by 45% in the quarter following his strategy implementation.</p>
           <div class="testi-author">
             <div class="testi-avatar">
               <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#d4cec5"/><circle cx="22" cy="18" r="7" fill="#a09890"/><ellipse cx="22" cy="38" rx="13" ry="8" fill="#a09890"/></svg>
             </div>
             <div>
               <div class="testi-name">Sarah Chen</div>
-              <div class="testi-role">CPO, Luminary App</div>
+              <div class="testi-role">CEO, Luminary Tech</div>
             </div>
           </div>
         </div>
         <div class="testimonial-card reveal reveal-delay-1">
           <div class="stars">★★★★★</div>
           <span class="testi-quote">"</span>
-          <p class="testi-text">Working with Alex is unlike any design collaboration I've had. He thinks in systems, not just screens. Truly exceptional work.</p>
+          <p class="testi-text">Working with Dave on our brand strategy was transformative. He thinks systemically about business growth and brand positioning. Absolutely exceptional partnership.</p>
           <div class="testi-author">
             <div class="testi-avatar">
               <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#c8c0b5"/><circle cx="22" cy="18" r="7" fill="#8a8078"/><ellipse cx="22" cy="38" rx="13" ry="8" fill="#8a8078"/></svg>
             </div>
             <div>
               <div class="testi-name">James Okafor</div>
-              <div class="testi-role">CEO, Vertex Ventures</div>
+              <div class="testi-role">Founder, Vertex Ventures</div>
             </div>
           </div>
         </div>
         <div class="testimonial-card reveal reveal-delay-2">
           <div class="stars">★★★★★</div>
           <span class="testi-quote">"</span>
-          <p class="testi-text">Our brand went from forgettable to iconic overnight. The attention to detail in both static designs and animated elements, plus the strategic thinking behind every decision was remarkable.</p>
+          <p class="testi-text">Our brand went from forgettable to unforgettable. Dave's strategic approach to brand positioning and his ability to articulate our value proposition transformed how we engage with customers.</p>
           <div class="testi-author">
             <div class="testi-avatar">
               <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#e0d8cc"/><circle cx="22" cy="18" r="7" fill="#b0a898"/><ellipse cx="22" cy="38" rx="13" ry="8" fill="#b0a898"/></svg>
@@ -1973,42 +2007,42 @@ window.addEventListener('load', function() {
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <span class="testi-quote">"</span>
-          <p class="testi-text">The user experience improvements Dave implemented resulted in a 45% increase in user engagement. His approach is both creative and data-driven.</p>
+          <p class="testi-text">Dave's keynote at our conference was nothing short of spectacular. His insights on brand strategy and audience engagement resonated with every single attendee.</p>
           <div class="testi-author">
             <div class="testi-avatar">
               <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#b8c5d1"/><circle cx="22" cy="18" r="7" fill="#7a8590"/><ellipse cx="22" cy="38" rx="13" ry="8" fill="#7a8590"/></svg>
             </div>
             <div>
               <div class="testi-name">Marcus Thompson</div>
-              <div class="testi-role">Product Manager, TechFlow</div>
+              <div class="testi-role">Event Director, TechSummit</div>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <span class="testi-quote">"</span>
-          <p class="testi-text">Dave transformed our entire digital presence. The new design not only looks stunning but also performs incredibly well across all metrics.</p>
+          <p class="testi-text">The brand strategy workshop Dave facilitated for our executive team was a turning point. His clarity, energy, and strategic depth are unmatched.</p>
           <div class="testi-author">
             <div class="testi-avatar">
               <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#d1c5b8"/><circle cx="22" cy="18" r="7" fill="#90857a"/><ellipse cx="22" cy="38" rx="13" ry="8" fill="#90857a"/></svg>
             </div>
             <div>
               <div class="testi-name">Elena Rodriguez</div>
-              <div class="testi-role">Marketing Director, Innovate Co</div>
+              <div class="testi-role">CMO, Global Innovations</div>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <span class="testi-quote">"</span>
-          <p class="testi-text">Professional, creative, and results-oriented. Dave delivered a design that exceeded our expectations and drove real business growth.</p>
+          <p class="testi-text">Professional, strategic, and inspiring. Dave helped us find our voice and position ourselves as leaders in our industry.</p>
           <div class="testi-author">
             <div class="testi-avatar">
               <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#c5d1b8"/><circle cx="22" cy="18" r="7" fill="#85907a"/><ellipse cx="22" cy="38" rx="13" ry="8" fill="#85907a"/></svg>
             </div>
             <div>
               <div class="testi-name">David Park</div>
-              <div class="testi-role">Founder, StartupLab</div>
+              <div class="testi-role">CEO, StartupLab</div>
             </div>
           </div>
         </div>
@@ -2018,21 +2052,21 @@ window.addEventListener('load', function() {
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <span class="testi-quote">"</span>
-          <p class="testi-text">Dave's design thinking elevated our entire product strategy. The interface is not just beautiful—it's intuitive and drives real user engagement.</p>
+          <p class="testi-text">Dave's strategic thinking transformed how we approach our market. His keynote was the most engaging session at our annual leadership summit.</p>
           <div class="testi-author">
             <div class="testi-avatar">
               <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#c8b8d1"/><circle cx="22" cy="18" r="7" fill="#8a7a90"/><ellipse cx="22" cy="38" rx="13" ry="8" fill="#8a7a90"/></svg>
             </div>
             <div>
               <div class="testi-name">Rachel Kim</div>
-              <div class="testi-role">Head of Design, CloudSync</div>
+              <div class="testi-role">VP Marketing, CloudSync</div>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <span class="testi-quote">"</span>
-          <p class="testi-text">The rebrand Dave created for us was nothing short of transformational. Our brand recognition increased by 60% within the first quarter.</p>
+          <p class="testi-text">The brand positioning strategy Dave developed for us was a game-changer. Our market share grew 40% in the first year.</p>
           <div class="testi-author">
             <div class="testi-avatar">
               <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#b8d1c5"/><circle cx="22" cy="18" r="7" fill="#7a9085"/><ellipse cx="22" cy="38" rx="13" ry="8" fill="#7a9085"/></svg>
@@ -2046,14 +2080,14 @@ window.addEventListener('load', function() {
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <span class="testi-quote">"</span>
-          <p class="testi-text">Working with Dave was a masterclass in design excellence. Every pixel has purpose, every interaction feels natural. Absolutely phenomenal work.</p>
+          <p class="testi-text">Working with Dave was a masterclass in strategic brand building. His insights on positioning and messaging transformed our market presence.</p>
           <div class="testi-author">
             <div class="testi-avatar">
               <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#d1b8c8"/><circle cx="22" cy="18" r="7" fill="#907a8a"/><ellipse cx="22" cy="38" rx="13" ry="8" fill="#907a8a"/></svg>
             </div>
             <div>
               <div class="testi-name">Jordan Taylor</div>
-              <div class="testi-role">Product Lead, NextGen Apps</div>
+              <div class="testi-role">Managing Partner, NextGen Ventures</div>
             </div>
           </div>
         </div>
@@ -2071,11 +2105,11 @@ window.addEventListener('load', function() {
   <div class="contact-inner">
     <div class="contact-eyebrow reveal">Let's Create Something</div>
     <h2 class="reveal">Have a<br><em>Project?</em></h2>
-    <p class="contact-sub reveal">Just Click the Button below.</p>
-    <a href="#contact" class="btn-primary contact-btn reveal"><span>Get In Touch</span></a>
+    <p class="contact-sub reveal">Ready to transform your brand? Let's discuss how we can work together.</p>
+    <a href="contact.html" class="btn-primary contact-btn reveal"><span>Get In Touch</span></a>
     <div class="social-links reveal">
-      <a href="#" class="social-link">Behance</a>
       <a href="#" class="social-link">LinkedIn</a>
+      <a href="#" class="social-link">Twitter</a>
       <a href="#" class="social-link">Instagram</a>
     </div>
   </div>
@@ -2083,7 +2117,7 @@ window.addEventListener('load', function() {
 
 <!-- FOOTER -->
 <footer>
-  <a href="#" class="footer-logo">DESIGNER DAVE</a>
+  <a href="index.html" class="footer-logo">DAVE</a>
   <span class="footer-copy">© 2026 — All Rights Reserved</span>
   <a href="#hero" class="footer-back">↑ Back to Top</a>
 </footer>
