@@ -34,7 +34,7 @@
     letter-spacing: 0.15em;
     color: var(--ink);
     opacity: 0;
-    animation: fadeSlideUp 0.8s ease 0.5s forwards;
+    animation: fadeSlideUp 0.5s ease 0.3s forwards;
   }
   #preloader .preloader-sub {
     font-family: 'Poppins', sans-serif;
@@ -43,7 +43,7 @@
     text-transform: uppercase;
     color: var(--rust);
     opacity: 0;
-    animation: fadeSlideUp 0.8s ease 0.7s forwards;
+    animation: fadeSlideUp 0.5s ease 0.4s forwards;
   }
   #preloader.hide {
     opacity: 0;
@@ -69,6 +69,18 @@
   @keyframes scaleIn {
     0% { transform: scale(0); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
+  }
+  @media (max-width: 768px) {
+    #preloader img {
+      width: 200px !important;
+      height: 200px !important;
+    }
+    #preloader .preloader-text {
+      font-size: 2rem;
+    }
+    #preloader .preloader-sub {
+      font-size: 0.5rem;
+    }
   }
 
   :root {
@@ -353,7 +365,7 @@
 
   .hero-left .hero-badge {
     position: absolute;
-    bottom: 8rem;
+    bottom: 2rem;
     right: 4rem;
     width: 120px; height: 120px;
     z-index: 3;
@@ -860,23 +872,16 @@
 
   .testimonials-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     position: relative;
-    overflow: hidden;
     width: 100%;
   }
   .testimonials-container {
-    display: flex;
-    transition: transform 0.5s ease;
-    width: 300%;
+    display: contents;
   }
   .testimonials-set {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-    width: 33.333%;
-    flex-shrink: 0;
+    display: contents;
   }
   .testimonial-card {
     padding: 3rem;
@@ -1207,6 +1212,11 @@
       font-size: 0.6rem;
     }
     
+    /* Hero Tag */
+    .hero-tag::before {
+      display: none;
+    }
+    
     /* Video Heroes */
     #video-hero, #video-hero-2 {
       height: 60vh;
@@ -1242,7 +1252,7 @@
     .hero-badge {
       width: 80px;
       height: 80px;
-      bottom: 2rem;
+    bottom: 0.5rem;
       right: 2rem;
     }
     .floating-label {
@@ -1273,6 +1283,11 @@
       flex-direction: column;
       gap: 2rem;
       text-align: center;
+      align-items: center;
+    }
+    .services-header h2 {
+      text-align: center;
+      align-self: center;
     }
     .services-sub {
       text-align: center;
@@ -1315,6 +1330,19 @@
       height: 300px;
     }
     
+    /* Speaking */
+    #speaking {
+      padding: 6rem 2rem;
+    }
+    #speaking > div > div:nth-child(2) {
+      grid-template-columns: 1fr;
+    }
+    #speaking > div > div:nth-child(2) > div {
+      text-align: center;
+      max-width: 350px;
+      margin: 0 auto;
+    }
+    
     /* Process */
     #process {
       padding: 6rem 2rem;
@@ -1346,9 +1374,14 @@
       width: 100%;
     }
     .testimonials-set {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
-      width: 100%;
+      width: 300px;
+    }
+    @media (max-width: 480px) {
+      .testimonials-set {
+        grid-template-columns: 1fr;
+      }
     }
     .testimonials-container {
       width: 300%;
@@ -1526,8 +1559,8 @@ window.addEventListener('load', function() {
     document.getElementById('preloader').classList.add('hide');
     setTimeout(function() {
       document.getElementById('preloader').style.display = 'none';
-    }, 500);
-  }, 500);
+    }, 400);
+  }, 400);
 });
 </script>
 
@@ -1555,7 +1588,6 @@ window.addEventListener('load', function() {
           <textPath href="#textCircle">STRATEGIST · SPEAKER · THOUGHT LEADER · </textPath>
         </text>
         <circle cx="60" cy="60" r="20" fill="var(--rust)"/>
-        <text x="60" y="64" fill="white" font-family="Bebas Neue, sans-serif" font-size="11" text-anchor="middle" letter-spacing="1">HIRE ME</text>
       </svg>
     </div>
     <div class="floating-label">BRAND · STRATEGY · SPEAKING</div>
@@ -1743,7 +1775,7 @@ window.addEventListener('load', function() {
       <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 6vw, 6rem); color: var(--cream); line-height: 1; margin-bottom: 1rem;">Speaking <em style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; color: var(--blue);">Engagements</em></h2>
       <p style="font-size: 1.1rem; font-weight: 300; color: var(--smoke); max-width: 600px; margin: 0 auto;">Inspiring audiences worldwide with insights on brand strategy, business growth, and personal branding.</p>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
       <div class="reveal" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 3rem;">
         <div style="font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--rust); margin-bottom: 1rem;">2025</div>
         <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--cream); margin-bottom: 1rem;">Brand Strategy Summit</h3>
@@ -1771,12 +1803,7 @@ window.addEventListener('load', function() {
   <div style="max-width:1400px; margin:0 auto;">
     <div class="portfolio-header reveal">
       <h2>Brand I have <em>Worked With</em></h2>
-      <div class="filter-tabs">
-        <button class="filter-tab active">All</button>
-        <button class="filter-tab">Strategy</button>
-        <button class="filter-tab">Rebranding</button>
-        <button class="filter-tab">Positioning</button>
-      </div>
+
     </div>
     <div class="portfolio-grid reveal">
       <div class="portfolio-item" style="aspect-ratio: 404 / 316; height: auto;">
